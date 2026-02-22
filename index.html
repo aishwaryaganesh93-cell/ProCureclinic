@@ -7,59 +7,75 @@
 
 <style>
 body {
+    margin:0;
     font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f8fb;
-    color: #333;
+    background:#f4f8fb;
 }
 
 header {
-    background: #0b6fb8;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    background: linear-gradient(90deg,#0b6fb8,#0a4f84);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
 }
 
+header h1 { margin:0; }
+
 nav {
-    background: #084d82;
-    padding: 10px;
-    text-align: center;
+    background:#083b63;
+    padding:10px;
+    text-align:center;
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
+    padding:40px 20px;
+    max-width:1000px;
+    margin:auto;
 }
 
 .card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+button {
+    background:#0b6fb8;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    margin:5px;
 }
 
 footer {
-    background: #0b6fb8;
-    color: white;
-    text-align: center;
-    padding: 15px;
+    background:#0b6fb8;
+    color:white;
+    text-align:center;
+    padding:15px;
 }
-button {
-    background: #0b6fb8;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+
+/* WhatsApp Floating Button */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
 }
 </style>
 </head>
@@ -79,48 +95,71 @@ button {
 </nav>
 
 <section id="about">
-    <div class="card">
-        <h2>About Us</h2>
-        <p>
-        Welcome to Apollo Diagnostic and ProCure Clinic & Physiotherapy Center.
-        We provide reliable diagnostic services, medical consultation, and
-        physiotherapy care with modern equipment and experienced professionals.
-        </p>
-    </div>
+<div class="card">
+<h2>About Us</h2>
+<p>
+Apollo Diagnostic & ProCure Clinic provides reliable laboratory testing,
+doctor consultation, and physiotherapy services with modern equipment
+and experienced healthcare professionals.
+</p>
+</div>
 </section>
 
 <section id="services">
-    <div class="card">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Blood Tests & Laboratory Services</li>
-            <li>Health Checkup Packages</li>
-            <li>Doctor Consultation</li>
-            <li>Physiotherapy Treatment</li>
-            <li>Injury Rehabilitation</li>
-            <li>Home Sample Collection (Available)</li>
-        </ul>
-    </div>
+<div class="card">
+<h2>Our Services</h2>
+<ul>
+<li>Blood Tests & Lab Services</li>
+<li>Full Body Checkup</li>
+<li>Doctor Consultation</li>
+<li>Physiotherapy Treatment</li>
+<li>Pain Management</li>
+<li>Home Sample Collection</li>
+</ul>
+</div>
 </section>
 
 <section id="contact">
-    <div class="card">
-        <h2>Contact Us</h2>
-        <p><strong>Address:</strong> Badaraghunatpur, Gohira Square</p>
-        <p><strong>Phone:</strong> 7608942413</p>
-        <p><strong>Working Hours:</strong> 7:00 AM – 8:00 PM</p>
+<div class="card">
+<h2>Contact Us</h2>
 
-        <button onclick="callNow()">Call Now</button>
-    </div>
+<p><strong>Address:</strong> Badaraghunatpur, Gohira Square</p>
+<p><strong>Phone:</strong> 7608942413</p>
+<p><strong>Working Hours:</strong> 7:00 AM – 8:00 PM</p>
+
+<button onclick="callNow()">Call Now</button>
+
+<h3>Book Appointment</h3>
+<form onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required><br><br>
+<input type="tel" placeholder="Phone Number" required><br><br>
+<input type="date" required><br><br>
+<button type="submit">Submit</button>
+</form>
+
+<h3>Location</h3>
+<iframe 
+src="https://maps.google.com/maps?q=Badaraghunatpur%20Gohira%20Square&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="250" style="border:0;">
+</iframe>
+
+</div>
 </section>
 
 <footer>
-    <p>© 2026 Apollo Diagnostic & ProCure Clinic. All Rights Reserved.</p>
+<p>© 2026 Apollo Diagnostic & ProCure Clinic. All Rights Reserved.</p>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/917608942413" target="_blank">💬</a>
+
 <script>
-function callNow() {
-    window.location.href = "tel:7608942413";
+function callNow(){
+    window.location.href="tel:7608942413";
+}
+
+function submitForm(e){
+    e.preventDefault();
+    alert("Appointment request submitted. We will contact you soon.");
 }
 </script>
 
